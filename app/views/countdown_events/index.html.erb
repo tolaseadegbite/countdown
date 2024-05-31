@@ -1,0 +1,12 @@
+<h1>Countdown events</h1>
+
+<div id="countdown_events">
+  <% @countdown_events.each do |countdown_event| %>
+    <%= render countdown_event %>
+    <p>
+      <%= link_to "Show this countdown event", countdown_event %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New countdown event", new_countdown_event_path %>

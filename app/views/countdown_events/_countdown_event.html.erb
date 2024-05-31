@@ -1,0 +1,32 @@
+<div id="<%= dom_id countdown_event %>">
+  
+  <%= image_tag(countdown_event.image, style: 'max-width: 100%') if countdown_event.image.attached? %>
+  <p>
+    <strong>Name:</strong>
+    <%= countdown_event.name %>
+  </p>
+
+  <p>
+    <strong>category:</strong>
+    <%= countdown_event.category.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= countdown_event.description %>
+  </p>
+
+  <p>
+    <strong>Target:</strong>
+    <%= countdown_event.target %>
+  </p>
+
+  <% seconds_until_target_time = countdown_event.target.to_i - Time.now.to_i %>
+
+  <%= content_tag(:h1, "", data: {
+    controller: "countdown",
+    countdown_target: "countdown",
+    seconds_until_end_value: seconds_until_target_time
+  }) %>
+
+</div>

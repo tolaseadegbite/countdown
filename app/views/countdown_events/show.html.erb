@@ -1,0 +1,8 @@
+<%= render @countdown_event %>
+
+<div>
+  <%= link_to "Edit this countdown event", edit_countdown_event_path(@countdown_event) %> |
+  <%= link_to "Back to countdown events", countdown_events_path %>
+
+  <%= button_to "Destroy this countdown event", @countdown_event, method: :delete %>
+</div>
